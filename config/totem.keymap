@@ -105,8 +105,8 @@ label= "LOWER"                              ;
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
 
                 &none       &kp SLASH  &kp KP_N7   &kp KP_N8   &kp KP_N9       &kp ESC     &kp LBRC    &kp RBRC    &none       &none
-             &kp KP_EAQUL   &kp LEFT   &kp KP_N4   &kp KP_N5   &kp KP_N6       &kp RBKT    &kp KP_LPAR &kp KP_RPAR &none       &none
-  &kp KP_COMMA  &kp DOT     &none      &kp KP_N1   &kp KP_N2   &kp KP_N3       &kp RPAR    &kp KP_N1   &kp KP_N2   &none       & TILDE     &none      
+                &kp EQUAL   &kp ASTRK  &kp KP_N4   &kp KP_N5   &kp KP_N6       &kp LC(SPACE)    &kp LPAR    &kp RPAR    &none       &none
+     &kp COMMA  &kp DOT     &none      &kp KP_N1   &kp KP_N2   &kp KP_N3       &kp LC(LA(SPACE)) &kp LBKT    &kp RBKT    &none       &kp TILDE   &none      
                                      &kp KP_MINUS  &kp KP_PLUS &kp KP_N0       &trans      &trans      &trans      
                         >;
                 };
@@ -132,7 +132,7 @@ label= "RAISE"                               ;
 
                 &kp EXCL   &kp AT      &kp POUND   &kp DLLR    &kp PRCNT       &kp HOME    &kp PG_UP   &kp END     &kp PG_DN   &none      
                 &kp CARET  &kp AMPS    &kp ASTRK   &kp MINUS   &kp UNDER       &kp LEFT    &kp DOWN    &kp UP      &kp RIGHT   &kp UP 
-    &none       &none      &none       &none       &none       &none           &kp DEL     &kp BSPC    &none       &kp LEFT    &kp DOWN   &RIGHT         
+    &none       &none      &none       &none       &none       &none           &kp DEL     &kp BSPC    &none       &kp LEFT    &kp DOWN   &kp RIGHT         
                                        &trans      &trans      &trans          &kp SPACE   &trans      &trans      
                         >;
                 };
@@ -158,7 +158,7 @@ label= "ADJUST"                               ;
 
                 &kp F1     &kp F2      &kp F3      &kp F4      &kp F5          &kp F6      &kp F7      &kp F8      &kp F9      &kp F10       
                 &none      &none       &none       &none       &none           &kp LEFT    &kp DOWN    &kp UP      &kp RIGHT   &kp UP 
-    &none       &none      &none       &none       &none       &none           &none       &none       &none       &kp LEFT    &kp DOWN   &RIGHT         
+    &none       &none      &none       &none       &none       &none           &none       &none       &none       &kp LEFT    &kp DOWN    &kp RIGHT         
                                        &tog 3      &trans      &trans          &none       &none       &none      
                         >;
                 };
