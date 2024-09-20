@@ -136,7 +136,7 @@ label= "RAISE"                               ;
 
                 &kp EXCL   &kp AT      &kp HASH    &kp DLLR    &kp PRCNT       &kp HOME    &kp PG_UP   &kp END     &kp PG_DN   &none      
                 &kp CARET  &kp AMPS    &kp ASTRK   &kp MINUS   &kp UNDER       &kp LEFT    &kp DOWN    &kp UP      &kp RIGHT   &kp UP 
-    &none       &none      &none       &none       &none       &kp LALT SPACE  &kp DEL     &kp BSPC    &none       &kp LEFT    &kp DOWN   &kp RIGHT         
+    &none       &none      &none       &none       &none       &none           &kp DEL     &kp BSPC    &none       &kp LEFT    &kp DOWN   &kp RIGHT         
                                        &trans      &trans      &trans          &input_switch   &trans     &trans      
                         >;
                 };
