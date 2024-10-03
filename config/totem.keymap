@@ -17,14 +17,6 @@
     tapping-term-ms = <200>;
 };
 
-new_behavior: new_behavior {
-    compatible = "zmk,behavior-caps-word";
-    label = "caps words";
-    #binding-cells = <0>;
-    mods = <(MOD_LSFT|MOD_RSFT)>;
-    continue-list = <A B C D E F G H I J K L M N O P Q R S T U V W X Y Z>;
-};
-
 &lt {
     tapping-term-ms = <240>;
     flavor = "balanced";
@@ -65,6 +57,14 @@ new_behavior: new_behavior {
             label = "HOME_KEY";
             #binding-cells = <0>;
             bindings = <&macro_tap>, <&to BASE>;
+        };    
+        caps_word: caps_word {
+            compatible = "zmk,behavior-caps-word";
+            label = "CAPS_WORD";
+            #binding-cells = <0>;
+            continue-list = <UNDERSCORE MINUS BACKSPACE DELETE>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            ignore-numbers;
         };
     };
 
