@@ -73,25 +73,9 @@
     };
 
     macros {
-//        input_switch: input_switch {
-//            label = "KOR-EN";
-//            compatible = "zmk,behavior-macro";
-//            #binding-cells = <0>;
-//            bindings = <&macro_press &kp LCTL>, <&macro_tap &kp SPACE>, <&macro_release &kp LCTL>;
-//        };
+   };
 
-//        input_switch_alt: input_switch_alt {
-//            label = "KOR-CN";
-//            compatible = "zmk,behavior-macro";
-//            #binding-cells = <0>;
-//            bindings 
-//                = <&macro_press &kp LCTL &kp LALT>
-//                , <&macro_tap &kp SPACE>
-//                , <&macro_release &kp LCTL &kp LALT>;
-//        };
-    };
-
-        keymap {
+    keymap {
             compatible = "zmk,keymap";
 
 // ▄▄▄ base_layer ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
