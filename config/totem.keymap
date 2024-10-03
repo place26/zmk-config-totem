@@ -123,7 +123,7 @@
                 &kp EXCL   &kp AT      &kp HASH    &kp DLLR    &kp PRCNT       &kp HOME    &kp PG_UP   &kp END     &kp PG_DN   &none      
                 &kp CARET  &kp AMPS    &kp ASTRK   &kp MINUS   &kp UNDER       &kp LEFT    &kp DOWN    &kp UP      &kp RIGHT   &kp UP 
     &none       &none      &none       &none       &none       &kp LA(SPACE)   &kp DEL     &kp BSPC    &none       &kp LEFT    &kp DOWN   &kp RIGHT         
-                                       &trans      &trans      &trans          &input_switch   &trans     &trans      
+                                       &tog NUMERIC  &trans      &trans          &input_switch   &trans     &trans      
                 >;
             };
 
@@ -147,7 +147,7 @@
                 &kp F1      &kp F2      &kp F3      &kp F4      &kp F5          &kp F6      &kp F7      &kp F8      &kp F9      &kp F10       
                 &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3  &none      &kp LEFT    &kp DOWN    &kp UP      &kp RIGHT   &kp UP 
     &bt BT_CLR  &none       &none       &none       &none       &none           &none       &none       &none       &kp LEFT    &kp DOWN    &kp RIGHT         
-                                  &tog ADJUST      &trans      &trans           &none       &none       &none     
+                                  &none       &trans      &trans           &none       &none       &tog ADJUST     
                 >;
             };
 
@@ -166,10 +166,10 @@
                 bindings = <
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
 
-                &none       &kp SLASH  &kp KP_N7   &kp KP_N8   &kp KP_N9       &kp ESC              &kp LBRC    &kp RBRC    &none       &kp DQT
-                &kp EQUAL   &kp ASTRK  &kp KP_N4   &kp KP_N5   &kp KP_N6       &input_switch        &kp LPAR    &kp RPAR    &none       &kp SQT
-     &kp COMMA  &kp DOT     &kp KP_N0  &kp KP_N1   &kp KP_N2   &kp KP_N3       &input_switch_alt    &kp LBKT    &kp RBKT    &kp GRAVE   &kp TILDE   &none      
-                                     &kp KP_MINUS  &kp KP_PLUS &kp KP_N0       &trans      &trans      &trans      
+                &none       &kp SLASH  &kp KP_N7   &kp KP_N8   &kp KP_N9       &none       &none       &none       &none       &none  
+                &kp EQUAL   &kp ASTRK  &kp KP_N4   &kp KP_N5   &kp KP_N6       &none       &none       &none       &none       &none  
+     &kp COMMA  &kp DOT     &kp KP_N0  &kp KP_N1   &kp KP_N2   &kp KP_N3       &none       &none       &none       &none       &none       &none      
+                                     &kp KP_MINUS  &kp KP_PLUS &kp KP_N0       &trans      &trans      &tog NUMERIC      
                 >;
             };
 
