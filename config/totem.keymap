@@ -39,11 +39,26 @@
 
     combos {
         compatible = "zmk,combos";
+
         combo_home {
             timeout-ms = <50>;
             key-positions = <30 39>; // 양쪽 가장자리 키
             bindings = <&home_key>;
             layers = <BASE NUMERIC>; // 모든 레이어에서 작동
+        };
+
+        enter_combo {
+            bindings = <&kp ENTER>;
+            key-positions = <13 12 11>;
+            timeout-ms = <70>;
+            require-prior-idle-ms = <100>;
+        };
+
+        enter_right_combo {
+            bindings = <&kp ENTER>;
+            key-positions = <16 18 17>;
+            timeout-ms = <70>;
+            require-prior-idle-ms = <100>;
         };
     };
 
@@ -58,23 +73,24 @@
     };
 
     macros {
-        input_switch: input_switch {
-            label = "KOR-EN";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_press &kp LCTL>, <&macro_tap &kp SPACE>, <&macro_release &kp LCTL>;
-        };
+//        input_switch: input_switch {
+//            label = "KOR-EN";
+//            compatible = "zmk,behavior-macro";
+//            #binding-cells = <0>;
+//            bindings = <&macro_press &kp LCTL>, <&macro_tap &kp SPACE>, <&macro_release &kp LCTL>;
+//        };
 
-        input_switch_alt: input_switch_alt {
-            label = "KOR-CN";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings 
-                = <&macro_press &kp LCTL &kp LALT>
-                , <&macro_tap &kp SPACE>
-                , <&macro_release &kp LCTL &kp LALT>;
-        };
+//        input_switch_alt: input_switch_alt {
+//            label = "KOR-CN";
+//            compatible = "zmk,behavior-macro";
+//            #binding-cells = <0>;
+//            bindings 
+//                = <&macro_press &kp LCTL &kp LALT>
+//                , <&macro_tap &kp SPACE>
+//                , <&macro_release &kp LCTL &kp LALT>;
+//        };
     };
+
         keymap {
             compatible = "zmk,keymap";
 
@@ -120,8 +136,8 @@
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
 
                 &none       &kp SLASH  &kp KP_N7   &kp KP_N8   &kp KP_N9       &kp ESC              &kp LBRC    &kp RBRC    &none       &kp DQT
-                &kp EQUAL   &kp ASTRK  &kp KP_N4   &kp KP_N5   &kp KP_N6       &input_switch        &kp LPAR    &kp RPAR    &none       &kp SQT
-     &kp COMMA  &kp DOT     &kp KP_N0  &kp KP_N1   &kp KP_N2   &kp KP_N3       &input_switch_alt    &kp LBKT    &kp RBKT    &kp GRAVE   &kp TILDE   &none      
+                &kp EQUAL   &kp ASTRK  &kp KP_N4   &kp KP_N5   &kp KP_N6       &kp LC(SPACE)        &kp LPAR    &kp RPAR    &none       &kp SQT
+     &kp COMMA  &kp DOT     &kp KP_N0  &kp KP_N1   &kp KP_N2   &kp KP_N3       &kp LC(LS(SPACE))    &kp LBKT    &kp RBKT    &kp GRAVE   &kp TILDE   &none      
                                      &kp KP_MINUS  &kp KP_PLUS &kp KP_N0       &trans      &kp LT      &kp GT      
                 >;
             };
@@ -146,7 +162,7 @@
                 &kp EXCL   &kp AT      &kp HASH    &kp DLLR    &kp PRCNT       &kp HOME    &kp PG_UP   &kp END     &kp PG_DN   &none      
                 &kp CARET  &kp AMPS    &kp ASTRK   &kp MINUS   &kp UNDER       &kp LEFT    &kp DOWN    &kp UP      &kp RIGHT   &kp UP 
       &none     &none      &none       &none       &none       &kp LA(SPACE)   &kp DEL     &kp BSPC    &none       &kp LEFT    &kp DOWN   &kp RIGHT         
-                                 &kp ENTER   &mt LCTL ESC  &lt RAISE TAB        &input_switch   &trans     &tog NUMERIC      
+                                 &kp ENTER   &mt LCTL ESC  &lt RAISE TAB       &kp LC(SPACE)   &trans     &tog NUMERIC      
                 >;
             };
 
@@ -168,7 +184,7 @@
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
 
                 &bootloader &sys_reset  &none      &none       &none            &kp F1      &kp F2      &kp F3      &kp F4      &kp F5       
-                &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3  &none      &kp F6      &kp F7      &kp F8      &kp F9      &kp F10 
+                &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3  &bt BT_SEL 4      &kp F6      &kp F7      &kp F8      &kp F9      &kp F10 
         &none   &bt BT_CLR  &none       &none       &none       &none           &kp F11     &kp F12     &none       &none       &none       &none         
                                   &lt ADJUST ENTER  &none       &none           &none       &none       &none     
                 >;
