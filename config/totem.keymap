@@ -12,7 +12,6 @@
     label = "HOMEROW_MODS";
     compatible = "zmk,behavior-hold-tap";
     flavor = "tap-preferred";
-    global-quick-tap;
     quick-tap-ms = <125>;
     tapping-term-ms = <200>;
 };
@@ -64,7 +63,6 @@
             #binding-cells = <0>;
             continue-list = <UNDERSCORE MINUS BACKSPACE DELETE>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            ignore-numbers;
         };
     };
 
