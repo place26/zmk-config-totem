@@ -17,6 +17,14 @@
     tapping-term-ms = <200>;
 };
 
+new_behavior: new_behavior {
+    compatible = "zmk,behavior-caps-word";
+    label = "caps words";
+    #binding-cells = <0>;
+    mods = <(MOD_LSFT|MOD_RSFT)>;
+    continue-list = <A B C D E F G H I J K L M N O P Q R S T U V W X Y Z>;
+};
+
 &lt {
     tapping-term-ms = <240>;
     flavor = "balanced";
@@ -128,10 +136,10 @@
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-       &kp EXCL   &kp AT    &kp HASH   &kp DLLR      &kp PRCNT        &kp HOME       &kp PG_UP  &kp END       &kp PG_DN  &none
-       &kp CARET  &kp AMPS  &kp ASTRK  &kp MINUS     &kp UNDER        &kp LEFT       &kp DOWN   &kp UP        &kp RIGHT  &kp UP
-&none  &none      &none     &none      &none         &kp LA(SPACE)    &kp DEL        &kp BSPC   &none         &kp LEFT   &kp DOWN  &kp RIGHT
-                            &kp ENTER  &mt LCTL ESC  &lt RAISE TAB    &kp LC(SPACE)  &trans     &tog NUMERIC
+       &kp EXCL              &kp AT                &kp HASH   &kp DLLR      &kp PRCNT        &kp HOME       &kp PG_UP  &kp END       &kp PG_DN  &none
+       &kp CARET             &kp AMPS              &kp ASTRK  &kp MINUS     &kp UNDER        &kp LEFT       &kp DOWN   &kp UP        &kp RIGHT  &kp UP
+&none  &kp LG(LS(NUMBER_3))  &kp LG(LS(NUMBER_4))  &none      &none         &kp LA(SPACE)    &kp DEL        &kp BSPC   &none         &kp LEFT   &kp DOWN  &kp RIGHT
+                                                   &kp ENTER  &mt LCTL ESC  &lt RAISE TAB    &kp LC(SPACE)  &trans     &tog NUMERIC
             >;
         };
 
@@ -151,10 +159,10 @@
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-       &bootloader   &sys_reset    &none             &none         &none           &kp F1   &kp F2   &kp F3   &kp F4  &kp F5
-       &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2      &bt BT_SEL 3  &bt BT_SEL 4    &kp F7   &kp F8   &kp F9   &none   &kp F6
-&none  &bt BT_CLR    &none         &none             &none         &none           &kp F10  &kp F11  &kp F12  &none   &none   &none
-                                   &lt ADJUST ENTER  &none         &none           &none    &none    &none
+       &bootloader   &sys_reset    &none             &none         &none           &kp F1      &kp F2  &kp F3  &sys_reset  &bootloader
+       &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2      &bt BT_SEL 3  &bt BT_SEL 4    &kp F4      &kp F5  &kp F6  &none       &none
+&none  &bt BT_CLR    &none         &none             &none         &none           &kp F7      &kp F8  &kp F9  &kp F10     &kp F11      &kp F12
+                                   &lt ADJUST ENTER  &none         &none           &caps_word  &none   &none
             >;
         };
 
