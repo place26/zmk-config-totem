@@ -98,7 +98,7 @@
                 &kp Q       &kp W       &kp E       &kp R       &kp T           &kp Y       &kp U       &kp I       &kp O       &kp P
                 HRML(A,     S,          D,          F)          &kp G           &kp H       HRMR(J,     K,          L,          SEMI)
     &kp LSHFT   &kp Z       &kp X       &kp C       &kp V       &kp B           &kp N       &kp M       &kp COMMA   &kp DOT     &kp FSLH    &kp BSLH
-                               &kp ENTER  &mt LCTL ESC  &lt RAISE TAB           &lt LOWER SPACE   &mt LALT SPACE  &mt LGUI ENTER
+                         &lt ADJUST ENTER &mt LCTL ESC  &lt RAISE TAB           &lt LOWER SPACE   &mt LALT SPACE  &mt LGUI ENTER
                 >;
             };
 
