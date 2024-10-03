@@ -98,7 +98,7 @@
                 &kp Q       &kp W       &kp E       &kp R       &kp T           &kp Y       &kp U       &kp I       &kp O       &kp P
                 HRML(A,     S,          D,          F)          &kp G           &kp H       HRMR(J,     K,          L,          SEMI)
     &kp LSHFT   &kp Z       &kp X       &kp C       &kp V       &kp B           &kp N       &kp M       &kp COMMA   &kp DOT     &kp FSLH    &kp BSLH
-                             &kp ENTER  &mt LCTL ESC  &lt RAISE TAB           &lt LOWER SPACE   &mt LALT SPACE  &mt LGUI ENTER
+                               &kp ENTER  &mt LCTL ESC  &lt RAISE TAB           &lt LOWER SPACE   &mt LALT SPACE  &mt LGUI ENTER
                 >;
             };
 
@@ -145,8 +145,8 @@
 
                 &kp EXCL   &kp AT      &kp HASH    &kp DLLR    &kp PRCNT       &kp HOME    &kp PG_UP   &kp END     &kp PG_DN   &none      
                 &kp CARET  &kp AMPS    &kp ASTRK   &kp MINUS   &kp UNDER       &kp LEFT    &kp DOWN    &kp UP      &kp RIGHT   &kp UP 
-    &none       &none      &none       &none       &none       &kp LA(SPACE)   &kp DEL     &kp BSPC    &none       &kp LEFT    &kp DOWN   &kp RIGHT         
-                                 &kp ENTER   &mt LCTL ESC  &lt RAISE TAB        &input_switch   &trans     &trans      
+      &none     &none      &none       &none       &none       &kp LA(SPACE)   &kp DEL     &kp BSPC    &none       &kp LEFT    &kp DOWN   &kp RIGHT         
+                                 &kp ENTER   &mt LCTL ESC  &lt RAISE TAB        &input_switch   &trans     &tog NUMERIC      
                 >;
             };
 
@@ -170,7 +170,7 @@
                 &bootloader &sys_reset  &none      &none       &none            &kp F1      &kp F2      &kp F3      &kp F4      &kp F5       
                 &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3  &none      &kp F6      &kp F7      &kp F8      &kp F9      &kp F10 
         &none   &bt BT_CLR  &none       &none       &none       &none           &kp F11     &kp F12     &none       &none       &none       &none         
-                                        &none       &none       &none           &none       &none       &tog NUMERIC     
+                                        &none       &none       &none           &none       &none       &none     
                 >;
             };
 
