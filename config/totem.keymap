@@ -9,10 +9,6 @@
 #define ADJUST 3
 #define NUMERIC 4 
 
-// Home row mods macro
-#define HRML(k1,k2,k3,k4) &mt LGUI k1  &mt LALT k2  &mt LCTRL k3  &mt LSHFT k4
-#define HRMR(k1,k2,k3,k4) &mt RSHFT k1  &mt RCTRL k2  &mt RALT k3  &mt RGUI k4
-
 &mt {
     label = "HOMEROW_MODS";
     compatible = "zmk,behavior-hold-tap";
@@ -96,7 +92,7 @@
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
 
                 &kp Q       &kp W       &kp E       &kp R       &kp T           &kp Y       &kp U       &kp I       &kp O       &kp P
-                HRML(A,     S,          D,          F)          &kp G           &kp H       HRMR(J,     K,          L,          SEMI)
+                &mt LGUI A  &mt LALT S  &mt LCTRL D &mt LSHFT F &kp G           &kp H       &mt RSHFT J &mt RCTRL K &mt RALT L  &mt RGUI SEMI
     &kp LSHFT   &kp Z       &kp X       &kp C       &kp V       &kp B           &kp N       &kp M       &kp COMMA   &kp DOT     &kp FSLH    &kp BSLH
                         &lt ADJUST ENTER  &mt LCTL ESC  &lt RAISE TAB           &lt LOWER SPACE   &mt LALT SPACE  &mt LGUI ENTER
                 >;
