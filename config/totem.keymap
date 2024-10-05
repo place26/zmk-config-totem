@@ -134,10 +134,10 @@
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-       &kp EXCL              &kp AT                &kp HASH   &kp DLLR      &kp PRCNT        &kp HOME       &kp PG_UP  &kp END       &kp PG_DN  &none
+       &kp EXCL              &kp AT                &kp HASH   &kp DLLR      &kp PRCNT        &kp HOME       &kp PG_UP  &kp END       &kp PG_DN  &tog NUMERIC
        &kp CARET             &kp AMPS              &kp ASTRK  &kp MINUS     &kp UNDER        &kp LEFT       &kp DOWN   &kp UP        &kp RIGHT  &kp UP
 &none  &kp LG(LS(NUMBER_3))  &kp LG(LS(NUMBER_4))  &none      &none         &kp LA(SPACE)    &kp DEL        &kp BSPC   &none         &kp LEFT   &kp DOWN  &kp RIGHT
-                                                   &kp ENTER  &mt LCTL ESC  &lt RAISE TAB    &kp LC(SPACE)  &trans     &tog NUMERIC
+                                                   &kp ENTER  &mt LCTL ESC  &lt RAISE TAB    &kp LC(SPACE)  &none      &none
             >;
         };
 
