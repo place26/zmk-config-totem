@@ -48,6 +48,11 @@
             timeout-ms = <70>;
             require-prior-idle-ms = <100>;
         };
+
+        bspc_combo {
+            bindings = <&kp BSPC>;
+            key-positions = <6 7 8>;
+        };
     };
 
     behaviors {
@@ -56,7 +61,8 @@
             label = "HOME_KEY";
             #binding-cells = <0>;
             bindings = <&macro_tap>, <&to BASE>;
-        };    
+        };
+
         caps_word: caps_word {
             compatible = "zmk,behavior-caps-word";
             label = "CAPS_WORD";
@@ -134,9 +140,9 @@
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-       &kp EXCL              &kp AT                &kp HASH   &kp DLLR      &kp PRCNT        &kp HOME       &kp PG_UP  &kp END       &kp PG_DN  &tog NUMERIC
-       &kp CARET             &kp AMPS              &kp ASTRK  &kp MINUS     &kp UNDER        &kp LEFT       &kp DOWN   &kp UP        &kp RIGHT  &kp UP
-&none  &kp LG(LS(NUMBER_3))  &kp LG(LS(NUMBER_4))  &none      &none         &kp LA(SPACE)    &kp DEL        &kp BSPC   &none         &kp LEFT   &kp DOWN  &kp RIGHT
+       &kp EXCL              &kp AT                &kp HASH   &kp DLLR      &kp PRCNT        &kp HOME       &kp PG_UP  &kp END  &kp PG_DN  &tog NUMERIC
+       &kp CARET             &kp AMPS              &kp ASTRK  &kp MINUS     &kp UNDER        &kp LEFT       &kp DOWN   &kp UP   &kp RIGHT  &kp UP
+&none  &kp LG(LS(NUMBER_3))  &kp LG(LS(NUMBER_4))  &none      &none         &kp LA(SPACE)    &kp DEL        &kp BSPC   &none    &kp LEFT   &kp DOWN      &kp RIGHT
                                                    &kp ENTER  &mt LCTL ESC  &lt RAISE TAB    &kp LC(SPACE)  &none      &none
             >;
         };
