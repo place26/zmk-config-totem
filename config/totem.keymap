@@ -49,8 +49,8 @@
             require-prior-idle-ms = <100>;
         };
 
-        bspc_combo {
-            bindings = <&kp BSPC>;
+        caps_combo {
+            bindings = <&tog 4>;
             key-positions = <6 7 8>;
         };
     };
@@ -60,7 +60,7 @@
             compatible = "zmk,behavior-macro";
             label = "HOME_KEY";
             #binding-cells = <0>;
-            bindings = <&macro_tap>, <&to BASE>;
+            bindings = <&macro_tap>, <&to 0>;
         };
 
         caps_word: caps_word {
@@ -94,10 +94,10 @@
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-           &kp Q       &kp W       &kp E             &kp R         &kp T            &kp Y            &kp U           &kp I           &kp O       &kp P
-           &mt LGUI A  &mt LALT S  &mt LCTRL D       &mt LSHFT F   &kp G            &kp H            &mt RSHFT J     &mt RCTRL K     &mt RALT L  &mt RGUI SEMI
-&kp LSHFT  &kp Z       &kp X       &kp C             &kp V         &kp B            &kp N            &kp M           &kp COMMA       &kp DOT     &kp FSLH       &kp BSLH
-                                   &lt ADJUST ENTER  &mt LCTL ESC  &lt RAISE TAB    &lt LOWER SPACE  &mt LALT SPACE  &mt LGUI ENTER
+            &kp Q       &kp W       &kp E        &kp R         &kp T        &kp Y        &kp U        &kp I        &kp O       &kp P
+            &mt LGUI A  &mt LALT S  &mt LCTRL D  &mt LSHFT F   &kp G        &kp H        &mt RSHFT J  &mt RCTRL K  &mt RALT L  &mt RGUI SEMI
+&caps_word  &kp Z       &kp X       &kp C        &kp V         &kp B        &kp N        &kp M        &kp COMMA    &kp DOT     &kp FSLH       &kp BSLH
+                                    &lt 3 ENTER  &kp CAPSLOCK  &lt 2 TAB    &lt 1 SPACE  &kp SPACE    &lt 4 ENTER
             >;
         };
 
@@ -117,10 +117,10 @@
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-           &none      &kp SLASH  &kp KP_N7     &kp KP_N8    &kp KP_N9    &kp ESC            &kp LBRC  &kp RBRC  &none      &kp DQT
-           &kp EQUAL  &kp ASTRK  &kp KP_N4     &kp KP_N5    &kp KP_N6    &kp LC(SPACE)      &kp LPAR  &kp RPAR  &none      &kp SQT
-&kp COMMA  &kp DOT    &none      &kp KP_N1     &kp KP_N2    &kp KP_N3    &kp LC(LA(SPACE))  &kp LBKT  &kp RBKT  &kp GRAVE  &kp TILDE  &none
-                                 &kp KP_MINUS  &kp KP_PLUS  &kp KP_N0    &trans             &none     &none
+       &none      &kp SLASH  &kp KP_N7     &kp KP_N8    &kp KP_N9    &kp ESC            &kp LBRC  &kp RBRC  &none      &kp DQT
+       &kp EQUAL  &kp ASTRK  &kp KP_N4     &kp KP_N5    &kp KP_N6    &kp LC(SPACE)      &kp LPAR  &kp RPAR  &none      &kp SQT
+&none  &kp DOT    &none      &kp KP_N1     &kp KP_N2    &kp KP_N3    &kp LC(LA(SPACE))  &kp LBKT  &kp RBKT  &kp GRAVE  &kp TILDE  &none
+                             &kp KP_MINUS  &kp KP_PLUS  &kp KP_N0    &trans             &none     &none
             >;
         };
 
@@ -143,7 +143,7 @@
        &kp EXCL              &kp AT                &kp HASH   &kp DLLR   &kp PRCNT        &kp HOME       &kp PG_UP          &kp END  &kp PG_DN  &none
        &kp CARET             &kp AMPS              &kp ASTRK  &kp MINUS  &kp UNDER        &kp LEFT       &kp DOWN           &kp UP   &kp RIGHT  &kp UP
 &none  &kp LG(LS(NUMBER_3))  &kp LG(LS(NUMBER_4))  &none      &none      &kp LA(SPACE)    &kp DEL        &kp BSPC           &none    &kp LEFT   &kp DOWN  &kp RIGHT
-                                                   &none      &none      &lt RAISE TAB    &kp LC(SPACE)  &kp LC(LA(SPACE))  &none
+                                                   &none      &none      &lt 2 TAB        &kp LC(SPACE)  &kp LC(LA(SPACE))  &none
             >;
         };
 
@@ -163,10 +163,10 @@
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-       &bootloader   &sys_reset    &none             &none         &none           &kp F1   &kp F2   &kp F3   &sys_reset  &bootloader
-       &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2      &bt BT_SEL 3  &bt BT_SEL 4    &kp F4   &kp F5   &kp F6   &none       &none
-&none  &bt BT_CLR    &none         &none             &none         &none           &kp F7   &kp F8   &kp F9   &kp F10     &kp F11      &kp F12
-                                   &lt ADJUST ENTER  &none         &caps_word      &kp F10  &kp F11  &kp F12
+       &bootloader   &sys_reset    &none         &none         &none           &kp F1   &kp F2   &kp F3   &sys_reset  &bootloader
+       &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &kp F4   &kp F5   &kp F6   &none       &none
+&none  &bt BT_CLR    &none         &none         &none         &none           &kp F7   &kp F8   &kp F9   &none       &none        &none
+                                   &lt 3 ENTER   &none         &caps_word      &kp F10  &kp F11  &kp F12
             >;
         };
 
@@ -184,10 +184,10 @@
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-           &none      &kp SLASH  &kp KP_N7     &kp KP_N8    &kp KP_N9    &none     &none     &none         &none      &none
-           &kp EQUAL  &kp ASTRK  &kp KP_N4     &kp KP_N5    &kp KP_N6    &kp LEFT  &kp DOWN  &kp UP        &kp RIGHT  &kp UP
-&kp COMMA  &kp DOT    &kp KP_N0  &kp KP_N1     &kp KP_N2    &kp KP_N3    &none     &none     &none         &kp LEFT   &kp DOWN  &kp RIGHT
-                                 &kp KP_MINUS  &kp KP_PLUS  &kp KP_N0    &trans    &trans    &tog NUMERIC
+           &none      &kp SLASH  &kp KP_N7     &kp KP_N8    &kp KP_N9    &none     &none     &none   &none      &none
+           &kp EQUAL  &kp ASTRK  &kp KP_N4     &kp KP_N5    &kp KP_N6    &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &kp UP
+&kp COMMA  &kp DOT    &none      &kp KP_N1     &kp KP_N2    &kp KP_N3    &none     &none     &none   &kp LEFT   &kp DOWN  &kp RIGHT
+                                 &kp KP_MINUS  &kp KP_PLUS  &kp KP_N0    &none     &none     &none
             >;
         };
     };
