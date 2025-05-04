@@ -28,20 +28,6 @@
     combos {
         compatible = "zmk,combos";
 
-        combo_home {
-            timeout-ms = <50>;
-            key-positions = <39 20 31>; // 양쪽 가장자리 키
-            bindings = <&home_key>;
-            layers = <0>; // 모든 레이어에서 작동
-        };
-
-        enter_combo {
-            bindings = <&kp ESCAPE>;
-            key-positions = <13 12 11>;
-            timeout-ms = <70>;
-            require-prior-idle-ms = <100>;
-        };
-
         enter_right_combo {
             bindings = <&kp ENTER>;
             key-positions = <16 18 17>;
@@ -49,18 +35,37 @@
             require-prior-idle-ms = <100>;
         };
 
-        caps_combo {
+        navigation_tog {
             bindings = <&tog 4>;
             key-positions = <6 7 8>;
+        };
+
+        numeric_tog {
+            bindings = <&tog 5>;
+            key-positions = <27 28 29>;
         };
     };
 
     behaviors {
-        home_key: home_key {
+        stylist_email: stylist_email {
             compatible = "zmk,behavior-macro";
-            label = "HOME_KEY";
             #binding-cells = <0>;
-            bindings = <&macro_tap>, <&to 0>;
+            bindings = <&none &kp S &kp DOT &kp S &kp T &kp Y &kp L &kp I &kp S &kp T &kp AT &kp G &kp M &kp A &kp I &kp L &kp DOT &kp C &kp O &kp M>;
+            label = "STYLIST_EMAIL";
+        };
+
+        puma_email: puma_email {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none &kp P &kp U &kp M &kp A &kp N1 &kp N8 &kp N9 &kp N6 &kp N1 &kp AT &kp G &kp M &kp A &kp I &kp L &kp DOT &kp C &kp O &kp M>;
+            label = "PUMA_EMAIL";
+        };
+
+        xtdig_email: xtdig_email {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none &kp X &kp T &kp D &kp I &kp G &kp N8 &kp N3 &kp S &kp N9 &kp AT &kp G &kp M &kp A &kp I &kp L &kp DOT &kp C &kp O &kp M>;
+            label = "XTDIG_EMAIL";
         };
 
         caps_word: caps_word {
@@ -97,7 +102,7 @@
             &kp Q       &kp W       &kp E        &kp R         &kp T        &kp Y        &kp U        &kp I        &kp O       &kp P
             &mt LGUI A  &mt LALT S  &mt LCTRL D  &mt LSHFT F   &kp G        &kp H        &mt RSHFT J  &mt RCTRL K  &mt RALT L  &mt RGUI SEMI
 &caps_word  &kp Z       &kp X       &kp C        &kp V         &kp B        &kp N        &kp M        &kp COMMA    &kp DOT     &kp FSLH       &kp BSLH
-                                    &lt 3 ENTER  &kp CAPSLOCK  &lt 2 TAB    &lt 1 SPACE  &kp SPACE    &lt 4 ENTER
+                                    &lt 3 ENTER  &kp CAPSLOCK  &lt 2 TAB    &lt 1 SPACE  &kp SPACE    &kp ENTER
             >;
         };
 
@@ -117,10 +122,10 @@
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-       &none      &kp SLASH  &kp KP_N7     &kp KP_N8    &kp KP_N9    &kp ESC            &kp LBRC  &kp RBRC  &none      &kp DQT
-       &kp EQUAL  &kp ASTRK  &kp KP_N4     &kp KP_N5    &kp KP_N6    &kp LC(SPACE)      &kp LPAR  &kp RPAR  &none      &kp SQT
-&none  &kp DOT    &none      &kp KP_N1     &kp KP_N2    &kp KP_N3    &kp LC(LA(SPACE))  &kp LBKT  &kp RBKT  &kp GRAVE  &kp TILDE  &none
-                             &kp KP_MINUS  &kp KP_PLUS  &kp KP_N0    &trans             &none     &none
+           &none      &kp SLASH  &kp KP_N7     &kp KP_N8    &kp KP_N9    &kp ESC            &kp LBRC  &kp RBRC  &none      &kp DQT
+           &kp EQUAL  &kp ASTRK  &kp KP_N4     &kp KP_N5    &kp KP_N6    &kp LC(SPACE)      &kp LPAR  &kp RPAR  &none      &kp SQT
+&kp COMMA  &kp DOT    &none      &kp KP_N1     &kp KP_N2    &kp KP_N3    &kp LC(LA(SPACE))  &kp LBKT  &kp RBKT  &kp GRAVE  &kp TILDE  &none
+                                 &kp KP_MINUS  &kp KP_PLUS  &kp KP_N0    &trans             &none     &none
             >;
         };
 
@@ -163,14 +168,14 @@
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-       &bootloader   &sys_reset    &none         &none         &none           &kp F1   &kp F2   &kp F3   &sys_reset  &bootloader
-       &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &kp F4   &kp F5   &kp F6   &none       &none
-&none  &bt BT_CLR    &none         &none         &none         &none           &kp F7   &kp F8   &kp F9   &none       &none        &none
-                                   &lt 3 ENTER   &none         &caps_word      &kp F10  &kp F11  &kp F12
+       &bootloader   &sys_reset      &none         &none         &none           &kp F1   &kp F2   &kp F3   &sys_reset  &bootloader
+       &bt BT_SEL 0  &bt BT_SEL 1    &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &kp F4   &kp F5   &kp F6   &none       &none
+&none  &bt BT_CLR    &stylist_email  &puma_email   &xtdig_email  &none           &kp F7   &kp F8   &kp F9   &none       &none        &none
+                                     &lt 3 ENTER   &none         &none           &kp F10  &kp F11  &kp F12
             >;
         };
 
-        numeric_layer {
+        navigation_layer {
             label = "NUMERIC";
 
             //             ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓   ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
@@ -184,10 +189,19 @@
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-           &none      &kp SLASH  &kp KP_N7     &kp KP_N8    &kp KP_N9    &none     &none     &none   &none      &none
-           &kp EQUAL  &kp ASTRK  &kp KP_N4     &kp KP_N5    &kp KP_N6    &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &kp UP
-&kp COMMA  &kp DOT    &none      &kp KP_N1     &kp KP_N2    &kp KP_N3    &none     &none     &none   &kp LEFT   &kp DOWN  &kp RIGHT
-                                 &kp KP_MINUS  &kp KP_PLUS  &kp KP_N0    &none     &none     &none
+       &none  &none  &none  &none  &none    &none     &none     &none   &none      &none
+       &none  &none  &none  &none  &none    &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &kp UP
+&none  &none  &none  &none  &none  &none    &none     &none     &none   &kp LEFT   &kp DOWN  &kp RIGHT
+                     &none  &none  &none    &none     &none     &tog 4
+            >;
+        };
+
+        numeric_layer {
+            bindings = <
+           &trans        &kp SLASH  &none         &trans       &trans    &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp SLASH  &kp BACKSPACE
+           &kp KP_EQUAL  &kp STAR   &none         &trans       &trans    &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp STAR   &kp EQUAL
+&kp COMMA  &kp DOT       &trans     &trans        &trans       &trans    &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp ENTER  &kp DOT        &kp COMMA
+                                    &kp KP_MINUS  &kp KP_PLUS  &trans    &kp KP_NUMBER_0  &trans           &tog 5
             >;
         };
     };
